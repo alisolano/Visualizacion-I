@@ -1,24 +1,25 @@
 ---
 title: "Sueño y calidad de vida"
-author: "Las Ali"
+author: "Alison Solano y Alison Carrillo"
 output: html_document
 ---
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = FALSE)
 ```
-El sueño es uno de los pilares fundamentales de la salud y el bienestar. Dormir lo suficiente y con buena calidad no solo impacta en la salud física, sino también en el rendimiento cognitivo y emocional. Durante el descanso nocturno, el cuerpo realiza funciones esenciales: se recupera del desgaste diario, consolida la memoria y regula procesos hormonales que mantienen el equilibrio del organismo. Sin embargo, en la sociedad moderna, factores como el estrés, la falta de actividad física y el uso excesivo de cafeína han alterado los patrones de sueño de muchas personas.
+El sueño es uno de los pilares fundamentales de la salud y el bienestar. Dormir lo suficiente y con buena calidad no solo impacta en la salud física, sino también en el rendimiento cognitivo y emocional. Durante el descanso nocturno, el cuerpo realiza funciones esenciales: se recupera del desgaste diario, consolida la memoria y regula procesos hormonales que mantienen el equilibrio del organismo.
 
-El ritmo de vida actual, marcado por jornadas extensas, preocupaciones constantes y un acceso ilimitado a dispositivos electrónicos, ha desplazado el descanso a un segundo plano. Las horas destinadas a dormir se ven interrumpidas o reducidas, afectando tanto la calidad como la cantidad de sueño. Como consecuencia, muchos enfrentan problemas de salud como fatiga crónica, baja concentración y alteraciones en el estado de ánimo.
+Sin embargo, en la sociedad moderna, el sueño ha pasado a un segundo plano. El ritmo de vida actual, marcado por jornadas extensas, preocupaciones constantes y un acceso ilimitado a dispositivos electrónicos, ha alterado profundamente los patrones de descanso de muchas personas. Las horas destinadas a dormir se ven frecuentemente interrumpidas o reducidas, afectando tanto la cantidad como la calidad del sueño. Como consecuencia, muchos enfrentan problemas de salud como fatiga crónica, baja concentración y alteraciones en el estado de ánimo.
 
-A pesar de la creciente conciencia sobre la importancia del sueño, cada vez más personas reportan dificultades para descansar adecuadamente. El estrés laboral, la carga académica, los problemas personales y la falta de hábitos saludables crean un entorno que perjudica la calidad del sueño. Además, el estilo de vida moderno, caracterizado por la inactividad física y el consumo elevado de estimulantes como la cafeína, añade obstáculos adicionales. El sueño insuficiente y de baja calidad no solo reduce el bienestar diario, sino que también puede desencadenar problemas físicos y emocionales. En este contexto, surge la necesidad de analizar cómo interactúan estos factores y cuál es su impacto real en el descanso nocturno.
+Aunque existe una creciente conciencia sobre la importancia de dormir bien, cada vez más personas reportan dificultades para descansar adecuadamente. Factores como el estrés laboral, la carga académica, los problemas personales y la falta de hábitos saludables crean un entorno que perjudica el sueño reparador. Además, el estilo de vida actual, caracterizado por la inactividad física y el consumo elevado de estimulantes como la cafeína, añade obstáculos adicionales al descanso óptimo. El sueño insuficiente y de baja calidad no solo compromete el bienestar diario, sino que también puede desencadenar problemas físicos y emocionales a largo plazo.
 
-Es indispensable identificar qué hábitos o factores personales contribuyen a un buen descanso y cuáles lo obstaculizan. Entender esta dinámica resulta esencial para promover prácticas saludables que ayuden a mantener el equilibrio físico y mental.
+Ante esta realidad, resulta indispensable identificar qué hábitos o factores personales contribuyen a un buen descanso y cuáles lo obstaculizan. Comprender esta dinámica es fundamental para promover prácticas saludables que ayuden a mantener el equilibrio físico y mental, garantizando así un descanso de calidad en medio de las demandas contemporáneas.
+
 
 Para analizar la influencia de diversas variables en el sueño, se utilizó un conjunto de datos descargado desde Kaggle y contiene información relevante sobre diversos factores relacionados con el sueño, como la duración del sueño, el nivel de estrés, la actividad física, el índice de masa corporal (IMC) y la presencia de trastornos del sueño. 
 
 ```{r cargar-datos, echo=FALSE, message=FALSE, warning=FALSE}
-# Cargar librería
+# Cargar dataset
 library(readr)
 df <- read_csv("Sleep_health_and_lifestyle_dataset.csv")
 ```
@@ -96,7 +97,7 @@ ggplotly(p)
 
 
 ```
-Esta gráfica muestra la relación entre el nivel de actividad física (en el eje x) y la duración del sueño en horas (en el eje y). Cada punto representa a un individuo del estudio, y el color verde indica la distribución de los datos. Se puede observar un patrón positivo en la gráfica: a medida que el nivel de actividad física aumenta, la duración del sueño también tiende a incrementarse. Aunque se presentan casos que no siguen esta tendencia, se puede considerar una tendencia creciente. Lo que sugiere una relación positiva entre la actividad física y la duración del sueño, ya que las personas más acti}vas tienen a dormir más horas en promedio, lo que podría indicar que el ejercicio regular contribuye a mejorar la calidad del descanso.
+Esta gráfica muestra la relación entre el nivel de actividad física (en el eje x) y la duración del sueño en horas (en el eje y). Cada punto representa a un individuo del estudio, y el color verde indica la distribución de los datos. Se puede observar un patrón positivo en la gráfica: a medida que el nivel de actividad física aumenta, la duración del sueño también tiende a incrementarse. Aunque se presentan casos que no siguen esta tendencia, se puede considerar una tendencia creciente. Lo que sugiere una relación positiva entre la actividad física y la duración del sueño, ya que las personas más activas tienen a dormir más horas en promedio, lo que podría indicar que el ejercicio regular contribuye a mejorar la calidad del descanso.
 
 ```{r echo=FALSE}
 df$Gender <- factor(df$Gender, levels = c("Female", "Male"), labels = c("Mujer", "Hombre"))
@@ -118,7 +119,7 @@ ggplotly(p)
 
 ```
 
-Esta gráfica combina cinco variables: nivel de estrés (eje x), horas de sueño (eje y), tamaño del punto (número de pasos diarios), color del punto (calidad del sueño) y facetas (hombre o mujer). Cada burbuja representa a un individuo. Se observa claramente que, en ambos géneros, a medida que el nivel de estrés aumenta las horas y calidad del sueño disminuyen, especialmente en los niveles más alto de estrés. Con respecto a la cantidad de pasos diarios, se puede observar una tendencia ligeramente parecida. Ya que el tamaño de los puntos tienen a disminuir ligeramente conforme aumenta el nivel de estrés.
+Esta gráfica combina cinco variables: nivel de estrés (eje x), horas de sueño (eje y), tamaño del punto (número de pasos diarios), color del punto (calidad del sueño) y facetas (hombre o mujer) y cada burbuja representa a un individuo. Se observa claramente que, en ambos géneros, a medida que el nivel de estrés aumenta, las horas y calidad del sueño disminuyen, especialmente en los niveles más alto de estrés. Con respecto a la cantidad de pasos diarios, se puede observar una tendencia ligeramente parecida. Ya que el tamaño de los puntos tienen a disminuir ligeramente conforme aumenta el nivel de estrés.
 
 
 ```{r echo=FALSE}
@@ -173,15 +174,20 @@ subplot(p1, p2, p3, nrows = 3, shareX = FALSE, titleX = TRUE, titleY = TRUE, mar
 
 ```
 
-Este gráfico compuesto permite visualizar cómo la actividad física y el nivel de estrés afectan la duración del sueño en los participantes del estudio. Al combinar un histograma, un boxplot y un gráfico de dispersión, se logra una perspectiva clara sobre las interacciones entre estas variables clave.
-
-El histograma muestra que la mayoría de las personas duerme entre 7 y 8 horas por noche, lo que coincide con las recomendaciones generales de descanso. Sin embargo, al observar el boxplot central, se nota que el nivel de estrés tiene un impacto directo en la duración del sueño: a medida que el estrés aumenta, las horas de descanso disminuyen significativamente. Esto sugiere que el estrés elevado puede ser un factor limitante para alcanzar un descanso reparador.
-
-Por otro lado, el gráfico de dispersión revela que los niveles más altos de actividad física están relacionados con una mayor duración del sueño. Las personas que realizan más ejercicio tienden a dormir alrededor de 8 horas, mientras que quienes tienen bajos niveles de actividad física suelen dormir menos. Esto indica que el ejercicio podría actuar como un regulador positivo del descanso nocturno.
+Este gráfico compuesto permite visualizar cómo la actividad física y el nivel de estrés afectan la duración del sueño en los participantes del estudio. El primero muestra que la mayoría de las personas duerme entre 6 y 8 horas por noche, lo que coincide con las recomendaciones generales de descanso. Sin embargo, al observar el segundo, se nota que el nivel de estrés tiene un impacto directo en la duración del sueño: a medida que el estrés aumenta, las horas de descanso disminuyen significativamente. Por otro lado, el tercero revela que los niveles más altos de actividad física están relacionados con una mayor duración del sueño. Las personas que realizan más ejercicio tienden a dormir alrededor de 8 horas, mientras que quienes tienen bajos niveles de actividad física suelen dormir menos. Esto indica que el ejercicio podría actuar como un regulador positivo del descanso nocturno.
 
 ## Conclusiones
-El análisis realizado revela que el sueño está fuertemente influenciado por múltiples factores, destacando especialmente el nivel de estrés y la actividad física como variables clave que determinan tanto la cantidad como la calidad del descanso nocturno. Los gráficos muestran que el estrés elevado tiene un impacto negativo directo en la duración del sueño. A medida que el estrés aumenta, la cantidad de horas de descanso disminuye significativamente, afectando especialmente a los hombres. Esto pone en evidencia la necesidad de gestionar adecuadamente el estrés para promover un sueño reparador, ya que el descanso insuficiente puede tener repercusiones tanto físicas como mentales, incluyendo fatiga crónica, problemas de concentración y mayor susceptibilidad a trastornos del estado de ánimo.
+El análisis realizado revela que el sueño está fuertemente influenciado por múltiples factores, destacando especialmente el nivel de estrés y la actividad física como variables clave que determinan tanto la cantidad como la calidad del descanso nocturno. Los gráficos muestran que el estrés elevado tiene un impacto negativo directo en la duración del sueño. A medida que el estrés aumenta, la cantidad de horas de descanso disminuye significativamente. Esto pone en evidencia la necesidad de gestionar adecuadamente el estrés para promover un sueño reparador, ya que el descanso insuficiente puede tener repercusiones tanto físicas como mentales, incluyendo fatiga crónica, problemas de concentración y mayor susceptibilidad a trastornos del estado de ánimo.
 
 Por otro lado, el análisis muestra que la actividad física regular favorece el descanso prolongado y de mejor calidad. Los individuos que realizan ejercicio de manera constante tienden a dormir más horas, en contraste con aquellos que tienen un estilo de vida sedentario. Esto sugiere que el ejercicio puede actuar como un factor protector contra los efectos negativos del estrés sobre el sueño, mejorando tanto la cantidad como la percepción de calidad del descanso.
 
-En conclusión, los resultados obtenidos subrayan la importancia de abordar el sueño de manera integral, considerando tanto factores emocionales como físicos. Fomentar la actividad física y reducir los niveles de estrés son estrategias fundamentales para promover un descanso adecuado. Además, la atención a los trastornos específicos del sueño y el enfoque diferenciado según género pueden contribuir al desarrollo de intervenciones más efectivas para mejorar la salud y el bienestar de la población.
+En conclusión, los resultados obtenidos subrayan la importancia de abordar el sueño de manera integral, considerando tanto factores emocionales como físicos. Fomentar la actividad física y reducir los niveles de estrés son estrategias fundamentales para promover un descanso adecuado.
+
+## Referencias
+National Sleep Foundation. (s.f.). Why sleep is important and what happens when you don't get enough. American Psychological Association. Recuperado de https://www.apa.org/topics/sleep/why
+
+
+Killgore, W. D. S. (2010). Effects of sleep deprivation on cognition. Progress in Brain Research, 185, 105–129. Recuperado de DOI: 10.1016/B978-0-444-53702-7.00007-5
+
+
+Tharmalingam, L. (s.f.) Sleep Health and Lifestyle Dataset. Kaggle
